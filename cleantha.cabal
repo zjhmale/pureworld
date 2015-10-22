@@ -14,6 +14,7 @@ Library
   GHC-Options:          -Wall
   hs-source-dirs:       src
   Exposed-Modules:      Taste
+                      , FirstStep
   Build-Depends:        base >= 4 && < 5
                       , array
 
@@ -24,6 +25,7 @@ Test-Suite spec
   Ghc-Options:          -Wall
   Main-Is:              Spec.hs
   Other-Modules:        TasteSpec
+                      , FirstStepSpec
   Build-Depends:        base
                       , hspec >= 1.3
                       , QuickCheck
