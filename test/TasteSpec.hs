@@ -52,3 +52,11 @@ spec = do
         implicit * 2 `shouldBe` (6 :: Int)
       it "use explicit syntax" $
         explicit * 2 `shouldBe` (6 :: Int)
+
+    describe "list operations" $ do
+      it "just like lisp cons" $
+        cons 1 [2,3] `shouldBe` ([1,2,3] :: [Int])
+      it "just like lisp conj" $
+        conj [1,2] 3 `shouldBe` ([1,2,3] :: [Int])
+      it "zip two lists" $
+        zip [1,2,3] ["one","two","three"] `shouldBe` ([(1,"one"), (2,"two"), (3,"three")] :: [(Int, [Char])])

@@ -47,3 +47,13 @@ explicit = b + c
              {b = 1;
               c = 2}
 
+cons :: a -> [a] -> [a]
+cons x xs = x:xs
+
+conj :: [a] -> a -> [a]
+conj xs x = xs ++ [x]
+
+zip' :: [a] -> [b] -> [(a, b)]
+zip' _ [] = []
+zip' [] _ = []
+zip' (x:xs) (y:ys) = (x, y):zip' xs ys
