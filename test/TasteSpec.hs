@@ -60,3 +60,19 @@ spec = do
         conj [1,2] 3 `shouldBe` ([1,2,3] :: [Int])
       it "zip two lists" $
         zip [1,2,3] ["one","two","three"] `shouldBe` ([(1,"one"), (2,"two"), (3,"three")] :: [(Int, [Char])])
+
+    describe "tuple operations" $ do
+      it "take first elem of a tuple" $
+        fst ((1, "one") :: (Int, [Char])) `shouldBe` (1 :: Int)
+      it "take first eleme of a tuple" $
+        snd ((1, "one") :: (Int, [Char])) `shouldBe` ("one" :: [Char])
+
+    describe "new from old" $ do
+      it "should be a digit" $
+        isDigit '3' `shouldBe` True
+      it "should not be a digit" $
+        isDigit 'c' `shouldBe` False
+      it "should be a even" $
+        isEven (2 :: Int) `shouldBe` True
+      it "should be a odd" $
+        isEven (3 :: Int) `shouldBe` False
